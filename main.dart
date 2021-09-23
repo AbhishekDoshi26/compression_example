@@ -2,10 +2,9 @@ import 'dart:io';
 import 'dart:convert';
 
 main(List<String> arguments) {
+  File file = File("sample.json");
   String data = '';
-  for (int i = 0; i < 100000; i++) {
-    data = data + 'Hello world\r\n';
-  }
+  data = file.readAsStringSync();
 
   //Original Data
   List<int> original = utf8.encode(data);
